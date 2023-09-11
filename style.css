@@ -66,6 +66,7 @@ body {
    letter-spacing: 5px;
    font-size: 20px;
    color: black;
+   overflow: hidden;
 }
 
 #species {
@@ -73,7 +74,17 @@ body {
     font-size: 20px;
     letter-spacing: 5px;
     color: black;
+    overflow: hidden;
 }
+
+
+@media screen and (max-width: 500px) {
+    .info {
+      width: 180px;
+    }
+  }
+  
+  
 
 
 
