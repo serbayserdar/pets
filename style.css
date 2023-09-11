@@ -78,9 +78,24 @@ body {
 }
 
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 400px) {
+    .card {
+        width: 250px;
+    }
+
     .info {
       width: 180px;
+    }
+  }
+
+
+  @media screen and (max-width: 600px) {
+    .card {
+        width: 400px;
+    }
+
+    .info {
+      width: 300px;
     }
   }
   
