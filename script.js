@@ -1,9 +1,16 @@
 const container = document.querySelector('.container')
 
-fetch('https://learnwebcode.github.io/pet-adoption-data/pets.json')
+const fetchAndDisplayPets =(animal)=>{
+  fetch('https://learnwebcode.github.io/pet-adoption-data/pets.json')
 .then(res=>res.json())
 .then(data=>{
-    const allPets = data.map(item=>{
+  let result;
+  if(animal){
+    result = data.filter(item=>item.species===animal)
+  }else{
+    result = data;
+  }
+    const pets = result.map(item=>{
         return `<div class="card">
         <img class="photo" src="${item.photo}">
           <div class="info">
@@ -12,8 +19,15 @@ fetch('https://learnwebcode.github.io/pet-adoption-data/pets.json')
           </div>
         </div>`
     })
-    container.innerHTML = allPets.join('')
+    container.innerHTML = pets.join('')
 })
 .catch(error=>{
     console.log(error)
 })
+}
+fetchAndDisplayPets();
+
+
+
+
+
